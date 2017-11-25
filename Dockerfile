@@ -3,7 +3,7 @@ MAINTAINER Webiny <info@webiny.com>
 
 # System Dependencies
 RUN apt-get update && \
-    apt-get install -y wget \
+    apt-get install -y wget openssl \
     libxrender1 \
     libfontconfig \
     libxext6 \
