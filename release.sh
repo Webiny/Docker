@@ -1,31 +1,28 @@
 #!/usr/bin/env bash
 set -ex
 
-# SET THE FOLLOWING VARIABLES
-# docker hub username
+# Docker Hub
 USERNAME=webiny
-
-# image name
 IMAGE=php7
 
-# ensure we're up to date
-git pull
-
-# bump version
+# Increment Version
 docker run --rm -v "$PWD":/app treeder/bump patch
 version=`cat VERSION`
 echo "version: $version"
-# run build
-./build.sh
 
-# tag it
+# Build Image
+# ./build.sh
+
+# Tag/push - GIT
 git add -A
-git commit -m "version $version"
-git tag -a "$version" -m "version $version"
+git commit -m "v$version"
+git tag -a "v$version" -m "v$version"
 git push
 git push --tags
+
+# Docker Pushing Tags
 docker tag $USERNAME/$IMAGE:latest $USERNAME/$IMAGE:$version
 
-# push it
+# Push - Docker Hub
 docker push $USERNAME/$IMAGE:latest
 docker push $USERNAME/$IMAGE:$version
