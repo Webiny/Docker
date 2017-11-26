@@ -4,7 +4,7 @@ Once you're done making adjustments to Dockerfile, a few things need to be done 
 
 1. Changes must be committed to the repo
 2. New git tag and GitHub release must be created
-2. Built image must be pushed to Docker Hub
+2. Built image must be pushed to Docker Hub (webiny/php7)
 
 This all can be achieved with two simple scripts. The procedure is following:
 
