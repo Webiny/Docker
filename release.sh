@@ -6,12 +6,9 @@ USERNAME=webiny
 IMAGE=php7
 
 # Increment Version
-# docker run --rm -v "$PWD":/app treeder/bump patch
+docker run --rm -v "$PWD":/app treeder/bump patch
 version=`cat VERSION`
 echo "version: $version"
-
-# Build Image
-# ./build.sh
 
 # Tag/push - GIT
 git add -A
@@ -24,5 +21,4 @@ git push --tags
 docker tag $USERNAME/$IMAGE:latest $USERNAME/$IMAGE:$version
 
 # Push - Docker Hub
-docker push $USERNAME/$IMAGE:latest
 docker push $USERNAME/$IMAGE:$version
