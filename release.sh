@@ -6,7 +6,7 @@ USERNAME=webiny
 IMAGE=php7
 
 # Increment Version
-docker run --rm -v "$PWD":/app treeder/bump patch
+# docker run --rm -v "$PWD":/app treeder/bump patch
 version=`cat VERSION`
 echo "version: $version"
 
