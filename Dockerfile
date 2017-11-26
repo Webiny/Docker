@@ -1,5 +1,7 @@
 FROM php:7-fpm
+
 MAINTAINER Webiny <info@webiny.com>
+ADD VERSION .
 
 # System Dependencies
 RUN apt-get update && \
