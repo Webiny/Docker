@@ -1,4 +1,4 @@
-# How to release a new Docker image version
+# How to release a new Docker image
 
 Once you're done making adjustments to Dockerfile, a few things need to be done in order to create a new release.
 
